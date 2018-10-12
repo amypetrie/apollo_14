@@ -7,4 +7,7 @@ class Astronaut < ApplicationRecord
     average(:age).round
   end
 
+  def self.space_mission_titles
+    Astronaut.joins(:missions).pluck(:title).uniq
+  end
 end

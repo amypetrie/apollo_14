@@ -27,5 +27,11 @@ describe Astronaut, type: :model do
 
       expect(average).to eq(45)
     end
+
+    it 'space_mission_titles' do
+      titles = Astronaut.space_mission_titles.flatten.flatten
+
+      expect(titles).to eq(["Mission 1", "Mission 2"])
+    end
   end
 end
